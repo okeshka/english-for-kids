@@ -1,18 +1,29 @@
 class Card {
-    constructor(word, translation, imageSrc, audioSrc) {
+    constructor({word, translation, image, audioSrc}) {
         this.word = word;
         this.translation = translation;
-        this.image = `./assets/${imageSrc}`;
+        this.image = `./assets/${image}`;
         this.audioSrc = `./assets/${audioSrc}`;
     }
-    render() {
-        this.cardElement = document.createElement('li');
-        this.cardElement.className = "cards-item";
-        this.cardElement.innerHTML = 
-            `<div style = "background-image: url(${this.image})">
-             <p>${this.word}</p>
-             <p>${this.translation}</p>
-            </div>`
-        cardsList.append(this.cardElement);
+    createCard() {
+        const cardElement = document.createElement('div');
+        cardElement.className = "card-container";
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.backgroundImage = `url(${this.image})`;
+        cardElement.append(card);
+        cardElement.insertAdjacentHTML('beforeend', 
+        `<div class = "card-header">${this.word}</div><div>${this.translation}</div>`)
+        return cardElement;
     }
 }
+
+export default function cards(data) {
+    let cardsList = [];
+    data.forEach((element) => {
+        console.log(element);
+        const cardItem = new Card(element).createCard();
+        cardsList.push(cardItem)
+    })
+    return cardsList
+} 

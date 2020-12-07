@@ -24,11 +24,13 @@
   transition: -webkit-box-shadow .25s linear,-webkit-transform .7s;
   transition: box-shadow .25s linear,transform .7s;
   transition: box-shadow .25s linear,transform .7s,-webkit-box-shadow .25s linear,-webkit-transform .7s;
-}
-
-.category-item .green {
   background: -webkit-gradient(linear, left top, left bottom, from(#0099ae), color-stop(40%, #00bf82), color-stop(0, #fff), to(#fff));
   background: linear-gradient(180deg, #0099ae, #00bf82 40%, #fff 0, #fff);
+}
+
+.category-item_play {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fd6a63), color-stop(40%, #feb46b), color-stop(0, #fff), to(#fff));
+  background: linear-gradient(180deg, #fd6a63, #feb46b 40%, #fff 0, #fff);
 }
 
 .category-item img {

@@ -6,7 +6,7 @@ class Category {
     
     createCategory() {
         const categoryElement = document.createElement('a');
-        categoryElement.className = "category-item green";
+        categoryElement.className = "category-item";
         categoryElement.innerHTML = 
             `<img src = ${this.image} alt = ${this.name} />${this.name}`
        return categoryElement
@@ -29,3 +29,4 @@ export default class CategoryList {
         return categoryList;
     }
 }
+

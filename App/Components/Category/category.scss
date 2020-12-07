@@ -15,11 +15,11 @@
     margin: 20px 25px;
     cursor: pointer;
     transition: box-shadow .25s linear,transform .7s;
+    background: linear-gradient(180deg,#0099ae,#00bf82 40%,#fff 0,#fff);
 
-    & .green {
-        background: linear-gradient(180deg,#0099ae,#00bf82 40%,#fff 0,#fff);
+    &_play {
+    background: linear-gradient(180deg,#fd6a63,#feb46b 40%,#fff 0,#fff);
     }
-
     & img {
         width: 140px;
         height: 140px;
