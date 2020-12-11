@@ -10,10 +10,23 @@ class Card {
         cardElement.className = "card-container";
         const card = document.createElement('div');
         card.className = 'card';
-        card.style.backgroundImage = `url(${this.image})`;
+        const front = document.createElement('div');
+        const back = document.createElement('div');
+        const rotate = document.createElement('div');
+        const audio = new Audio(`${this.audioSrc}`);
+        front.className = "front";
+        back.className = "back";
+        rotate.className = "rotate";
+        rotate.addEventListener('click', ()=> {card.classList.add('translate')});
+        front.style.backgroundImage = back.style.backgroundImage = `url(${this.image})`;
+        front.insertAdjacentHTML('afterbegin', `<div class = "card-header">${this.word}</div>`);
+        back.insertAdjacentHTML('afterbegin', `<div class = "card-header">${this.translation}</div>`);
+        card.append(front, back, rotate, audio);
+        front.addEventListener('click', (evt) => {if (evt.target = rotate) return; })
+        front.addEventListener('mouseout', ()=> {card.classList.remove('translate')});
+        front.addEventListener('click', ()=> {audio.play()});
+        back.addEventListener('mouseout', ()=> {card.classList.remove('translate')});
         cardElement.append(card);
-        cardElement.insertAdjacentHTML('beforeend', 
-        `<div class = "card-header">${this.word}</div><div>${this.translation}</div>`)
         return cardElement;
     }
 }

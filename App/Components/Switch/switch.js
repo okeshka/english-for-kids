@@ -1,6 +1,7 @@
 //import state from '../../../state.js';
 import {list, menu} from '../../App.js';
 
+
 export default function switchInit() {
 const switchContainer = document.querySelector('.switch-container');
 const switcher = document.querySelector('.switch');

@@ -17,7 +17,7 @@ export default class CategoryList {
     constructor(data) {
         this.categoryName = data[0];
         this.categoryData = data.slice(1);
-        
+         
     }
     createCategoryList() {
         let categoryList = [];
@@ -28,5 +28,5 @@ export default class CategoryList {
         })
         return categoryList;
     }
-}
+} 
 
