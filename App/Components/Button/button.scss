@@ -36,3 +36,13 @@ button {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
+
+.repeat {
+    width: 65px;
+    font-size: 0;
+    background-image: url(https://english-for-kids.netlify.app/static/media/repeat.d0f11196.svg),linear-gradient(40deg,#ffd86f,#fc6262);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 32px 32px,cover;
+    background-position: 50%;
+} 
