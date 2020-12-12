@@ -14,6 +14,9 @@ const labelPlay = document.querySelector('.label-play');
      labelPlay .classList.toggle('hidden');
      switcher.classList.toggle('switch-play');
      switchContainer.classList.toggle('switch-container_play');
+      
+     list.forEach(element => element.classList.toggle('category-item_play'));
+     menu.classList.toggle('nav-menu_play');
 
      const cardCover = document.querySelectorAll('.card');
      cardCover.forEach(card =>card.classList.toggle('card-cover'));
@@ -22,10 +25,10 @@ const labelPlay = document.querySelector('.label-play');
      const cardHeader = document.querySelectorAll('.card-header');
      cardHeader.forEach(header =>header.classList.toggle('none'));
      
-    const btn = document.querySelector('.btn');
-    btn.classList.toggle('none');
+     
       
-     list.forEach(element => element.classList.toggle('category-item_play'));
-     menu.classList.toggle('nav-menu_play')
+    const btn = document.querySelector('.btn');
+    if (!btn) return;
+    btn.classList.toggle('none');
    })
 }
